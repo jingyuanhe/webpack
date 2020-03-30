@@ -7,12 +7,15 @@ module.exports={
     entry:{
         main:'./src/index.js'
     },
+    devtool:'cheap-eval-source-map',
     devServer: {
         contentBase: path.join(__dirname, "dist"),
-        compress: true,
         port: 3000,
         hot: true,
         hotOnly: true
+    },
+    optimization: {
+        usedExports: true
     },
     output:{
         path:path.resolve(__dirname,'dist'),
@@ -33,8 +36,10 @@ module.exports={
                             "chrome": "67",
                             "safari": "11.1",
                         },
-                        'useBuiltIns':'usage'
-                    }]]
+                        'useBuiltIns':'usage',
+                        "modules": false 
+                    }]],
+                   
                   }
                 }
             },

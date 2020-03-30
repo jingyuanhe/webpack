@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "1dbc856ad31673c9831a";
+/******/ 	var hotCurrentHash = "b4a43d315d25f24c5eaf";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -799,11 +799,25 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/*! all exports used */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("\n\nconst dev = new Promise(() => {\n  console.log(1);\n});\nvar arr = [];\narr.map(function (item, index) {});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n\n\nfunction component() {\n  var element = document.createElement('pre');\n  element.innerHTML = ['Hello webpack!', '5 cubed is equal to ' + Object(_math_js__WEBPACK_IMPORTED_MODULE_0__[/* cube */ \"a\"])(5)].join('\\n\\n');\n  return element;\n}\n\ndocument.body.appendChild(component());//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YmY0NSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBjdWJlIH0gZnJvbSAnLi9tYXRoLmpzJztcblxuZnVuY3Rpb24gY29tcG9uZW50KCkge1xuICB2YXIgZWxlbWVudCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3ByZScpO1xuICBlbGVtZW50LmlubmVySFRNTCA9IFsnSGVsbG8gd2VicGFjayEnLCAnNSBjdWJlZCBpcyBlcXVhbCB0byAnICsgY3ViZSg1KV0uam9pbignXFxuXFxuJyk7XG4gIHJldHVybiBlbGVtZW50O1xufVxuXG5kb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGNvbXBvbmVudCgpKTsiXSwibWFwcGluZ3MiOiJBQUFBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/index.js\n");
+
+/***/ }),
+
+/***/ "./src/math.js":
+/*!*********************!*\
+  !*** ./src/math.js ***!
+  \*********************/
+/*! exports provided: square, cube, default */
+/*! exports used: cube */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("/* unused harmony export square */\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"a\", function() { return cube; });\nfunction square(x) {\n  console.log('square');\n  return x * x;\n}\nfunction cube(x) {\n  console.log('cube');\n  return x * x * x;\n}\n/* unused harmony default export */ var _unused_webpack_default_export = ({\n  square,\n  cube\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvbWF0aC5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9tYXRoLmpzP2M0MGYiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGZ1bmN0aW9uIHNxdWFyZSh4KSB7XG4gIGNvbnNvbGUubG9nKCdzcXVhcmUnKTtcbiAgcmV0dXJuIHggKiB4O1xufVxuZXhwb3J0IGZ1bmN0aW9uIGN1YmUoeCkge1xuICBjb25zb2xlLmxvZygnY3ViZScpO1xuICByZXR1cm4geCAqIHggKiB4O1xufVxuZXhwb3J0IGRlZmF1bHQge1xuICBzcXVhcmUsXG4gIGN1YmVcbn07Il0sIm1hcHBpbmdzIjoiQUFBQTtBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/math.js\n");
 
 /***/ })
 
