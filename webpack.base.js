@@ -1,21 +1,9 @@
 const path=require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack=require('webpack');
 module.exports={
-    mode:'development',
     entry:{
         main:'./src/index.js'
-    },
-    devtool:'cheap-eval-source-map',
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        port: 3000,
-        hot: true,
-        hotOnly: true
-    },
-    optimization: {
-        usedExports: true
     },
     output:{
         path:path.resolve(__dirname,'dist'),
@@ -27,8 +15,8 @@ module.exports={
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                  loader: 'babel-loader',
-                  options: {
+                    loader: 'babel-loader',
+                    options: {
                     presets: [['@babel/preset-env',{
                         "targets": {
                             "edge": "17",
@@ -39,8 +27,8 @@ module.exports={
                         'useBuiltIns':'usage',
                         "modules": false 
                     }]],
-                   
-                  }
+                    
+                    }
                 }
             },
             {
@@ -80,5 +68,5 @@ module.exports={
     },
     plugins:[new HtmlWebpackPlugin({
         template:'./src/index.html'
-    }),new CleanWebpackPlugin(),new webpack.HotModuleReplacementPlugin()]
+    }),new CleanWebpackPlugin()]
 }
