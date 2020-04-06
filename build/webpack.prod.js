@@ -1,14 +1,11 @@
-const path=require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-module.exports={
-    entry:{
-        main:'./src/index.js'
-    },
-    output:{
-        path:path.resolve(__dirname,'dist'),
-        filename:'[name].js'
-    },
+const baseConfig=require('./webpack.base');
+const merge=require('webpack-merge');
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const prodConfig={
+    mode:'production',
+    devtool:'cheap-module-source-map',
     module:{
         rules:[
             {
@@ -26,7 +23,7 @@ module.exports={
                         },
                         'useBuiltIns':'usage',
                         "modules": false 
-                    }]],
+                    }],'@babel/react'],
                     
                     }
                 }
@@ -44,7 +41,7 @@ module.exports={
 
             },{
                 test:/\.scss$/,
-                use:['style-loader',{
+                use:[MiniCssExtractPlugin.loader,{
                     loader:'css-loader',
                     options:{
                         importLoaders:2
@@ -53,7 +50,7 @@ module.exports={
             },
             {
                 test:/\.css$/,
-                use:['style-loader','css-loader','postcss-loader']
+                use:[MiniCssExtractPlugin.loader,'css-loader','postcss-loader']
             },
             {
                 test:/\.(eot|svg|ttf|woff)$/,
@@ -66,7 +63,9 @@ module.exports={
             }
         ]
     },
-    plugins:[new HtmlWebpackPlugin({
-        template:'./src/index.html'
-    }),new CleanWebpackPlugin()]
+    optimization: {
+        minimizer: [new OptimizeCSSAssetsPlugin({})],
+    },
+    plugins:[new MiniCssExtractPlugin()]
 }
+module.exports=merge(baseConfig,prodConfig)
