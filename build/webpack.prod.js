@@ -3,6 +3,7 @@ const merge=require('webpack-merge');
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const prodConfig={
     mode:'production',
     devtool:'cheap-module-source-map',
@@ -66,6 +67,9 @@ const prodConfig={
     optimization: {
         minimizer: [new OptimizeCSSAssetsPlugin({})],
     },
-    plugins:[new MiniCssExtractPlugin()]
+    plugins:[new MiniCssExtractPlugin(), new GenerateSW ({
+        clientsClaim: true,
+        skipWaiting: true
+    })]
 }
 module.exports=merge(baseConfig,prodConfig)

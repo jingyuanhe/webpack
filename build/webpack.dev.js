@@ -9,14 +9,16 @@ const devConfig={
         contentBase: path.join(__dirname, "dist"),
         port: 3000,
         hot: true,
-        hotOnly: true
+        hotOnly: true,
+        overlay: true,
+        historyApiFallback:true
     },
     module:{
         rules:[
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: {
+                use: [{
                     loader: 'babel-loader',
                     options: {
                     presets: [['@babel/preset-env',{
@@ -27,11 +29,18 @@ const devConfig={
                             "safari": "11.1",
                         },
                         'useBuiltIns':'usage',
+                        "corejs": "3",
                         "modules": false 
                     }],'@babel/react'],
                     
                     }
-                }
+                },{
+                    loader:'eslint-loader',
+                    options:{
+                        fix:true,
+                        formatter: require('eslint-friendly-formatter')
+                    }
+                }]
             },
             {
                 test:/\.(jpg|png|gif)$/,
