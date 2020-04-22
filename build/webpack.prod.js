@@ -22,6 +22,7 @@ const prodConfig={
                             "chrome": "67",
                             "safari": "11.1",
                         },
+                        "corejs": "3",
                         'useBuiltIns':'usage',
                         "modules": false 
                     }],'@babel/react'],
